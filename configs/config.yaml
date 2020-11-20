@@ -1,0 +1,105 @@
+##########
+# Hugo Configuration
+# 
+# by arisac
+##########
+  
+# hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/newbridge/
+
+baseURL: https://newbridge.network/
+title: NewBridge
+theme: newbridge
+
+##########
+# configuration
+# ------
+disablePathToLower: true
+enableGitInfo: true
+
+##########
+# Needed for mermaid/katex shortcodes
+# ------
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+
+##########
+# Multi-lingual mode config
+# There are different options to translate files
+# See https://gohugo.io/content-management/multilingual/#translation-by-filename
+# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+# ------
+languages:
+  en:
+    languageName: English
+    contentDir: ../contents
+    weight: 1
+    languagedirection: ltr
+  # zh:
+  #   languageName: 中文
+  #   contentDir: ../contents-zh
+  #   weight: 2
+  #   languagedirection: ltr
+
+##########
+# Extra Configs
+# ------
+params:
+  ##########
+  # Theme Color
+  # (Optional, default 'auto') Sets color theme: light, dark or auto.
+  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  # ------
+  NewBridgeTheme: "auto"
+  
+  ##########
+  # Theme Color
+  # (Optional, default true) Controls table of contents visibility on right side of pages.
+  # Start and end levels can be controlled with markup.tableOfContents setting.
+  # You can also specify this parameter per page in front matter.
+  # ------
+  NewBridgeToC: true
+
+  ##########
+  # Site Logo
+  # (Optional, default none) Set the path to a logo for the site. If the logo is '/static/logo.png' then the path would be logo.png
+  # ------
+  NewBridgeLogo: /logo.svg
+
+  ##########
+  # Site Nav Bundle
+  # (Optional, default none) Set leaf bundle to render as side menu
+  # When not specified file structure and weights will be used
+  # ------
+  NewBridgeMenuBundle: /nav
+
+  ##########
+  # Git repository location
+  # Set source repository location.
+  # Used for 'Last Modified' and 'Edit this page' links.
+  # ------
+  NewBridgeRepo: https://github.com/{to-be-changed}
+
+  ##########
+  # Enable "Edit this page" links for 'doc' page type.
+  # Disabled by default. Uncomment to enable. Requires 'NewBridgeRepo' param.
+  # Edit path must point to root directory of repo.
+  # ------
+  NewBridgeEditPath: edit/{to-be-changed}/
+
+  ##########
+  # Configure the date format used on the pages
+  # - In git information
+  # - In blog posts
+  NewBridgeDateFormat: "January 2, 2006"
+
+  ##########
+  # Search Feature
+  # (Optional, default true) Enables search function with flexsearch,
+  # Index is built on fly, therefore it might slowdown your website.
+  # Configuration for indexing can be adjusted in i18n folder per language.
+  # ------
+  NewBridgeSearch: true
