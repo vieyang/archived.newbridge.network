@@ -1,5 +1,6 @@
 # NewBrige Repo Directory
 
+```
 ./
 | /contents 'main language: English'
 | | /about
@@ -19,7 +20,7 @@
 | | /apply...
 | | /whatever-name...
 | /faq
-| | h/ow-to....
+| | /how-to....
 | | | _index.md
 | | | asset.ext
 | | h/ow-to....
@@ -38,8 +39,11 @@
 | /contents-zh 'language: Chinese'
 | /contents-ja 'language: Japanese'
 | /contents-lang-code-no-locale 'language: Other'
+```
 
 ## don't have to care about below
+
+```
 ./
 | README.md
 | /configs
@@ -47,3 +51,4 @@
 | ｜ /base-theme-and-conponents
 | ｜ /resources
 | ｜ /public(.gitignore > generated website)
+```
