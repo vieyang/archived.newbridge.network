@@ -11,31 +11,31 @@
 | | | | icon.svg
 | | | | if-you-like.mp4
 | | | /what-is-newbridge
-| /docs
-| | /technical...
+| | /docs
+| | | /technical...
 | | | _index.md
 | | | asset.ext
-| | /api
-| | /testnet
-| | /apply...
-| | /whatever-name...
-| /faq
-| | /how-to....
-| | | _index.md
-| | | asset.ext
-| | h/ow-to....
-| | w/hatever-name...
-| /updates
-| | /name1
-| | | _index.md
-| | | asset.ext
-| | /name2
+| | | /api
+| | | /testnet
+| | | /apply...
+| | | /whatever-name...
+| | /faq
+| | | /how-to....
+| | | | _index.md
+| | | | asset.ext
+| | | /how-to....
+| | | /whatever-name...
+| | /updates
+| | | /name1
+| | | ｜ _index.md
+| | | ｜ asset.ext
+| | | /name2
 | | | name3.md
 | | | whatever-name.md
-| /changelogs
-| | yyyymmdd##.md
-| | yyyymmdd##.md
-| | yyyymmdd##.md
+| | /changelogs
+| | ｜ yyyymmdd##.md
+| | ｜ yyyymmdd##.md
+| | ｜ yyyymmdd##.md
 | /contents-zh 'language: Chinese'
 | /contents-ja 'language: Japanese'
 | /contents-lang-code-no-locale 'language: Other'
