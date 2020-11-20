@@ -46,6 +46,8 @@
 ```
 ./
 | README.md
+| /.github
+| | /workflows `automation configs`
 | /configs
 | ｜ hugo related configs
 | ｜ /base-theme-and-conponents
