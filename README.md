@@ -14,17 +14,17 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 ### S1 & S2: Prepare to be moved to offical repo
 
-** S1: Init Contents and Hugo Setup **
+**S1: Init Contents and Hugo Setup**
 
 - I'm working on the Hugo configs, feature scripts & theme UI.
 
 - Others should work on the contents.
 
-** S2: Setup offical repo and move all commits to the offical repo **
+**S2: Setup offical repo and move all commits to the offical repo**
 
 - TBD
 
-** Features Todo List **
+**Features Todo List**
 
 - Generate Menu 
 
@@ -54,7 +54,7 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 - Run 
 
-** Automations ***
+**Automations**
 
 - PR
 
@@ -79,3 +79,7 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 ### S4: Future
 
 Run as it should be
+
+## Other
+
+This repo is currently having rapid changes, consider use bots like https://github.com/wei/pull to keep your forks updated.
