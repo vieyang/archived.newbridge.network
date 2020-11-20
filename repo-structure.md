@@ -10,11 +10,11 @@
 | | | | image.png
 | | | | icon.svg
 | | | | if-you-like.mp4
-| | | /what-is-newbridge
+| | | /whatever-name...
 | | /docs
 | | | /technical...
-| | | _index.md
-| | | asset.ext
+| | | | _index.md
+| | | | asset.ext
 | | | /api
 | | | /testnet
 | | | /apply...
