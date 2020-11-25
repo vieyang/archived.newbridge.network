@@ -1,0 +1,249 @@
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+}
+
+body {
+  min-width: $body-min-width;
+  color: var(--body-font-color);
+  background: var(--body-background);
+
+  font-weight: $body-font-weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html * {
+  transition: all 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $body-font-weight;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+img {
+  vertical-align: baseline;
+}
+
+:focus {
+  @include outline;
+}
+
+body {
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    &.full {
+      padding: 0 auto;
+      margin: 0 auto;
+    }
+  }
+  &.full .container, .full .container {
+    max-width: unset;
+  }
+}
+
+main {
+  color: var(--body-content);
+  .container {
+    background: red;
+    padding: $as-md $as-lg;
+    &.full {
+      padding: unset;
+      max-width: unset;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  background: pink;
+  color: var(--body-content);
+  .container {
+    background: green;
+    padding: $as-md $as-lg;
+    &.full {
+      padding: unset;
+      max-width: unset;
+    }
+  }
+}
+
+
+@mixin ul-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// Site Navbar
+nav.navbar {
+  position: relative;
+  background: var(--navbar-bg);
+  box-shadow: 0px 2px 20px 0px rgba(21, 53, 80, 0.1);
+  font-size: $font-size-14;
+
+  .container {
+    display: flex;
+    padding: $as-sm $as-lg;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    display: flex;
+    // justify-content: flex-end;
+    justify-content: space-between;
+    font-weight: 600;
+  }
+
+  #navbar-check {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    height: $navbar-item-height;
+
+    label.toggle {
+      display: none;
+      align-items: center;
+    }
+    
+    img.logo {
+      height: $navbar-item-height;
+    }
+    
+  }
+
+  ul.navbar-nav {
+    @include ul-reset;
+    display: flex;
+    position: relative;
+    padding: 0 $as-md;
+    z-index: 100;
+
+    li.nav-item {
+      position: relative;
+      margin-right: $as-xs;
+      &:last-child {
+        margin-right: unset;
+      }
+    }
+
+    li.nav-item a {
+      display: flex;
+      line-height: $navbar-item-height;
+      padding: 0 $as-md;
+      @extend .button-highlight-neutral;
+      @extend .ar-sm;
+    }
+  }
+
+  .search-form {
+    position: relative;
+    display: block;
+  }
+
+  .search-results {
+    position: absolute;
+    display: block;
+    background: rgba(0, 0, 0, .5);
+    z-index: 100;
+  }
+
+  #navbar-search-results {
+    @include ul-reset;
+    position: relative;
+  }
+
+  #navbar-search-results li {
+    padding: $as-md;
+    list-style: none;
+    line-height: 1.5em;
+
+    small {
+      display: block;
+    }
+  }
+
+  #navbar-search-input {
+    margin: 0;
+    padding: 0 $as-md;
+    border: none;
+    height: $navbar-item-height;
+    border-radius: $as-sm;
+    color: var(--body-content);
+    @extend .highlight-neutral;
+  }
+
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+  nav.navbar {
+    .container {
+      flex-direction: column;
+      padding: $as-sm $as-sm;
+    }
+    .navbar-collapse {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: unset;
+    }
+    
+    .header {
+      justify-content: space-between;
+      
+      label.toggle {
+        display: flex;
+      }
+    }
+    
+    ul.navbar-nav {
+      flex-direction: column;
+      padding: 0;
+      li.nav-item {
+        margin: 0 0 8px 0;
+      }
+    }
+
+    .search-form {
+      padding: 8px 0;
+      margin: 8px 0;
+      border: solid 1px grey;
+      border-left: none;
+      border-right: none;
+      display: flex;
+      flex-direction: column;
+      .search-results {
+        display: unset;
+      }
+    }
+  }
+
+  #navbar-check:not(:checked) ~ .navbar-collapse {
+    display: none;
+  }
+  #navbar-check:checked ~ .navbar-collapse {
+    display: flex;
+    overflow-y: auto;
+  }
+
+  // Mobile Menu Order
+  .search-form {
+    order: -1;
+  }
+  
+}

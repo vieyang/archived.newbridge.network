@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" dir={{ .Site.Language.LanguageDirection }}>
+
+<head>
+  {{ partial "docs/html-head" . }}
+  {{ partial "docs/inject/head" . }}
+</head>
+
+<body dir={{ .Site.Language.LanguageDirection }}>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+    {{ template "nav" . }} 
+    
+  <main class="container flex" style="display: xnone;">
+    <aside class="newdocs-menu">
+      {{ template "menu" . }} <!-- Left menu Content -->
+    </aside>
+
+    <div class="newdocs-page">
+      <header class="newdocs-header">
+        {{ template "header" . }} <!-- Mobile layout header -->
+      </header>
+
+      {{ partial "docs/inject/content-before" . }}
+      {{ template "main" . }} <!-- Page Content -->
+      {{ partial "docs/inject/content-after" . }}
+
+      <footer class="newdocs-footer">
+        {{ template "footer" . }} <!-- Footer under page content -->
+        {{ partial "docs/inject/footer" . }}
+      </footer>
+
+      {{ template "comments" . }} <!-- Comments block -->
+
+      <label for="menu-control" class="hidden newdocs-menu-overlay"></label>
+    </div>
+
+    {{ if default true (default .Site.Params.NewDocsToC .Params.NewDocsToC) }}
+    <aside class="newdocs-toc">
+      {{ template "toc" . }} <!-- Table of Contents -->
+    </aside>
+    {{ end }}
+  </main>
+
+  {{ partial "docs/inject/body" . }}
+</body>
+
+</html>
+
+<!-- Aris start -->
+
+{{ define "nav" }}
+  {{ partial "docs/nav" . }}
+{{ end }}
+
+<!-- Aris end -->
+
+{{ define "menu" }}
+  {{ partial "docs/menu" . }}
+{{ end }}
+
+{{ define "header" }}
+  {{ partial "docs/header" . }}
+
+  {{ if default true (default .Site.Params.NewDocsToC .Params.NewDocsToC) }}
+  <aside class="hidden clearfix">
+    {{ template "toc" . }}
+  </aside>
+  {{ end }}
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "docs/footer" . }}
+{{ end }}
+
+{{ define "comments" }}
+  {{ if and .Content (default true (default .Site.Params.NewDocsComments .Params.NewDocsComments)) }}
+  <div class="newdocs-comments">
+    {{- partial "docs/comments" . -}}
+  </div>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+  <article class="markdown">
+    {{- .Content -}}
+  </article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}

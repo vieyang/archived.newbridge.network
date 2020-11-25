@@ -1,3 +1,0 @@
-# API
-
-* [history](history.md)
