@@ -68,18 +68,6 @@ curl -v https://replace-api-domain.ext/newbridge/pairs
 
 其中， Token 类型定义如下：
 
-
-
-    "address":"0x0f3229fEEEB7e96493482b70DF3024822F01AA01",
-                "raw_address":"0x0f3229fEEEB7e96493482b70DF3024822F01AA01",
-                "name":"Tether USD",
-                "symbol":"USDT",
-                "decimals":6,
-                "asset_type":"ERC20",
-                "chain_id":"4",
-                "sub_network":"Rinkeby"
-
-
 | 名称        | 类型   | 描述                                                         |
 | ----------- | ------ | ------------------------------------------------------------ |
 | address     | string | 合约地址。ethereum里0x格式，newchain里NEW开头格式。如果为原生币（ETH/NEW），则为空。 |
