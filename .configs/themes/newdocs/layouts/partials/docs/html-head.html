@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ default .Summary .Description }}">
-<meta name="theme-color" content="#FFFFFF">
+<!-- <meta name="theme-color" content="#FFFFFF"> -->
 
 {{- template "_internal/opengraph.html" . -}}
 
@@ -29,6 +29,8 @@
 {{- $swJS := resources.Get "sw-register.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ $swJS.RelPermalink }}" integrity="{{ $swJS.Data.Integrity }}"></script>
 {{ end -}}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 {{- template "_internal/google_analytics_async.html" . -}}
 

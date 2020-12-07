@@ -68,15 +68,27 @@
   code {
     padding: 0 $padding-4;
     background: var(--gray-200);
-    border-radius: $border-radius;
+    border-radius: $as-xxs;
     font-size: 0.875em;
+  }
+
+  & > .body > pre {
+    background: var(--pre-bg) !important;
+    code {
+      display: block;
+    }
   }
 
   pre {
     padding: $padding-16;
-    background: var(--gray-100);
     border-radius: $border-radius;
     overflow-x: auto;
+    @media (prefers-color-scheme: light) {
+      background: #{$color-deep} !important;
+    }
+    @media (prefers-color-scheme: dark) {
+      background: var(--pre-bg) !important;
+    }
 
     code {
       padding: 0;
@@ -84,11 +96,13 @@
     }
   }
 
+
+
   blockquote {
     margin: $padding-16 0;
     padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
 
-    border-inline-start: $padding-4 solid var(--gray-200);
+    border: $padding-4 solid var(--gray-200);
     border-radius: $border-radius;
 
     :first-child {
@@ -106,11 +120,27 @@
     border-collapse: collapse;
     margin-top: $padding-16;
     margin-bottom: $padding-16;
+    
+    // border-radius: $as-xs;
+
+
+
+    // thead {
+      
+    //   overflow: hidden;
+    //   tr {
+    //     background: var(--gray-200);
+    //   }
+    // }
+
+    // tr:first-child th:first-child { border-top-left-radius: $as-xs; }
+    // tr:first-child th:last-child { border-top-right-radius: $as-xs; }
+    // tr:last-child td:first-child { border-bottom-left-radius: $as-xs; }
+    // tr:last-child td:last-child { border-bottom-right-radius: $as-xs; }
 
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
-      border: $padding-1 solid var(--gray-200);
     }
 
     tr:nth-child(2n) {
@@ -174,6 +204,19 @@
     margin: $padding-16 0;
     figcaption p {
       margin-top: 0;
+    }
+  }
+
+  .highlight {
+    border-radius: $border-radius;
+    overflow: hidden;
+    & > div {
+      @media (prefers-color-scheme: light) {
+        background-color: #{$color-deep} !important;
+      }
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--pre-bg) !important;
+      }
     }
   }
 }

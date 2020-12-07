@@ -8,7 +8,7 @@ theme: newdocs
 # NewDocs configuration
 # ------
 disablePathToLower: true
-# enableGitInfo: true
+enableGitInfo: true
 
 ##########
 # Needed for mermaid/katex shortcodes
@@ -19,7 +19,12 @@ markup:
       unsafe: true
   tableOfContents:
     startLevel: 1
-
+  highlight:
+    lineNos: false
+    style: monokai
+    # Styles To Choose From:
+    # api, dracula, monokai, paraiso-dark, native, solarized-dark, solarized-dark-256, vim
+    
 
 ##########
 # Multi-lingual mode config
@@ -69,7 +74,7 @@ params:
   # ------
   NewDocsTheme: "auto"
 
-  # Theme Color
+  # Table of Contents
   # (Optional, default true) Controls table of contents visibility on right side of pages.
   # Start and end levels can be controlled with markup.tableOfContents setting.
   # You can also specify this parameter per page in front matter.
@@ -84,7 +89,7 @@ params:
   # Site Nav Bundle
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
-  NewDocsMenuBundle: /nav
+  # NewDocsMenuBundle: /nav
 
   # Site Section
   # (Optional, default docs) Specify root page to render child pages as menu.
@@ -95,12 +100,12 @@ params:
   # Git repository location
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  # NewDocsRepo: https://github.com/arisac/nep-web-wip
+  NewDocsRepo: https://github.com/arisac/nep-web-wip
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'NewDocsRepo' param.
   # Edit path must point to root directory of repo.
-  # NewDocsEditPath: edit/neps/
+  NewDocsEditPath: edit/neps/
 
   # Configure the date format used on the pages
   # - In git information
@@ -126,4 +131,7 @@ params:
 
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
+  # ------
+  # Don't know why feature failed in Safari of current version, should fix later  
+  # ------
   NewDocsServiceWorker: true

@@ -5,7 +5,6 @@ $padding-8: 0.5rem !default;
 $padding-16: 1rem !default;
 $padding-32: 2rem !default;
 
-
 $as-1: 1px !default;
 $as-xxs: 0.2rem !default;
 $as-xs: 0.5rem !default;
@@ -27,11 +26,9 @@ $body-min-width: 20rem !default;
 $container-max-width: 78rem !default;
 
 $header-height: 3.5rem !default;
-$menu-width: 16rem !default;
-$toc-width: 16rem !default;
+$aside-width: 14rem !default;
 
-$mobile-breakpoint: $menu-width + $body-min-width * 1.2 + $toc-width !default;
-
+$mobile-breakpoint: $aside-width + $body-min-width * 1.2 + $aside-width !default;
 
 $navbar-item-height: $as-lg + $as-xs !default;
 
@@ -43,6 +40,7 @@ $hint-colors: (
 
 // Color
 $color-primary: #15202b;
+$color-primary-deep: #0A0F15;
 $color-secondary: #3E4C56;
 $color-deep: #27323B;
 $color-light: #D7E2ED;
@@ -66,57 +64,149 @@ $color-orange: #FF9500;
 
 // Themes
 @mixin theme-light {
+  // Main Color
   --body-background: white;
   --body-content: black;
+  --main-content: black;
+  --main-content-invert: white;
+  --main-body: var(--main-content-invert); 
+  --primary: #15202b;
+  --on-primary: var(--main-content-invert);
+  --secondary: #3E4C56;
+  --on-secondary: var(--main-content-invert);
+  --accent: #11A1F1;
+  --on-accent: var(--main-content-invert);
+  --accent-2: #20C5A0;
+  --on-accent-2: var(--main-content-invert);
+  --secondary-bg: #{$color-lightest}
 
-  --color-accent: #{$color-accent};
-
-  --color-link: #{$color-accent};
-  --color-visited-link: #{$color-accent};
-
-  --icon-filter: none;
-
-  --hint-color-info: #6bf;
-  --hint-color-warning: #fd6;
-  --hint-color-danger: #f66;
-
+  // Theme Color
+  --color-link: var(--accent);
+  --color-visited-link: var(--accent);
   --highlight-neutral: black;
   --highlight-neutral-rgb: 22, 33, 44;
 
+  // Navbar
   --navbar-bg: white;
 
+  // Named Color
+  --hint-color-green: #20C5A0;
+  --hint-color-blue: #11A1F1;
+  --hint-color-red: #FF5949;
+  --hint-color-orange: #FF9500;
+  --gray-100: rgba(255, 255, 255, 0.1);
+  --gray-200: rgba(255, 255, 255, 0.2);
+  --gray-500: rgba(255, 255, 255, 0.5);
+  // Hint Color
+  --hint-color-info: #6bf;
+  --hint-color-danger: var(--hint-color-red)
+  --hint-color-success: var(--hint-color-green);
+  --hint-color-warning: var(--hint-color-orange);
+  --hint-color-error: var(--hint-color-red);
+  // Tools
+  --icon-filter: none;
+  --pre-bg: #{$color-light};
+  --sidebar-toc-bg: #{$color-lightest};
+  --footer-bg: #{$color-primary};
 }
 
+
+
 @mixin theme-dark {
+  // Main Color
+  --main-content: black;
+  --main-content-invert: white;
+  --main-body: var(--main-content-invert); 
+  --primary: #15202b;
+  --on-primary: var(--main-content-invert);
+  --secondary: #3E4C56;
+  --on-secondary: var(--main-content-invert);
+  --accent: #11A1F1;
+  --on-accent: var(--main-content-invert);
+  --accent-2: #20C5A0;
+  --on-accent-2: var(--main-content-invert);
+  --secondary-bg: #{$color-lightest};
+
+  // Theme Color
   --body-background: black;
-  --body-content: white;
-
-  --color-link: #{$color-accent};
-  --color-visited-link: #{$color-accent};
-
-  --icon-filter: brightness(0) invert(1);
-
-  --hint-color-info: #6bf;
-  --hint-color-warning: #fd6;
-  --hint-color-danger: #f66;
-
+  --body-content: rgb(255, 255, 255);
+  --color-link: var(--accent);
+  --color-visited-link: var(--accent);
   --highlight-neutral: white;
   --highlight-neutral-rgb: 255, 255, 255;
 
+  // Navbar
   --navbar-bg: #{$color-primary};
+
+  // Named Color
+  --hint-color-green: #20C5A0;
+  --hint-color-blue: #11A1F1;
+  --hint-color-red: #FF5949;
+  --hint-color-orange: #FF9500;
+  --gray-100: rgba(255, 255, 255, 0.1);
+  --gray-200: rgba(255, 255, 255, 0.2);
+  --gray-500: rgba(255, 255, 255, 0.5);
+  // Hint Color
+  --hint-color-info: #6bf;
+  --hint-color-danger: var(--hint-color-red)
+  --hint-color-success: var(--hint-color-green);
+  --hint-color-warning: var(--hint-color-orange);
+  --hint-color-error: var(--hint-color-red);
+  // Tools
+  --icon-filter: brightness(0) invert(1);
+  --pre-bg: #{$color-deep};
+  --sidebar-toc-bg: #0A0F15;
+  --footer-bg: #{$color-primary};
 }
 
-.ar-sm {
-  border-radius: $as-sm;
-}
-.ar-md {
+// Has bug parsing css variable, should be fix in future or find another way
+// @mixin bg-opacity($color, $opacity) {
+//   background: $color; /* The Fallback */
+//   background: rgba($color, $opacity);
+// }
+
+.rounded {
   border-radius: $as-md;
-}
-.ar-lg {
-  border-radius: $as-lg;
-}
-.ar-xl {
-  border-radius: $as-xl;
+  &-xxs {
+    border-radius: $as-xxs;
+  }
+  &-xs {
+    border-radius: $as-xs;
+  }
+  &-sm {
+    border-radius: $as-sm;
+  }
+  &-md {
+    border-radius: $as-md;
+  }
+  &-lg {
+    border-radius: $as-lg;
+  }
+  &-xl {
+    border-radius: $as-xl;
+  }
+  &-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &-bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &-circle {
+    border-radius: 50%;
+  }
+  &-pill {
+    border-radius: 100rem;
+  }
 }
 
 .highlight-neutral {
@@ -132,3 +222,23 @@ $color-orange: #FF9500;
     background-color: rgba(var(--highlight-neutral-rgb), 0.1);
   }
 }
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+}
+
+
+// Grayscale
+$white: #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;

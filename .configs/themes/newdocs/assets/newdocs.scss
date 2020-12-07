@@ -1,6 +1,16 @@
 @import "defaults";
 @import "custom_variables";
-@import "{{ default "auto" .Site.Params.NewDocsTheme }}";
+// @import "{{ default "auto" .Site.Params.NewDocsTheme }}";
+
+:root {
+  @include theme-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-dark;
+  }
+}
 
 @import "normalize";
 @import "utils";

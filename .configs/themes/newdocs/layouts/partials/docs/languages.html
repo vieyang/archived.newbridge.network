@@ -7,22 +7,18 @@
   {{ $translations = merge $translations (dict .Language.Lang .) }}
 {{ end }}
 
-<div class="newdocs-languages" tabindex="0" aria-haspopup="true">
-  <ul>
-    <li class="flex align-center">
-      <img src="{{ "svg/translate.svg" | relURL }}" class="newdocs-icon" alt="Languages" />
-      {{ $.Site.Language.LanguageName }}
-    </li> 
-  </ul>
-
-  <ul class="newdocs-languages-list">
-    {{ range .Site.Languages }}{{ with index $translations .Lang }}
-    <li class="{{ if (eq $.Site.Language .Language) }}active{{ end }}">
-      <a href="{{ .Permalink }}" class="flex align-center">
-        <img src="{{ "svg/translate.svg" | relURL }}" class="newdocs-icon" alt="Languages" />
-        {{ .Language.LanguageName }}
-      </a>
-    </li>
-    {{ end }}{{ end }}
-  </ul>
-</div>
+<li class="nav-item dropdown">
+  <a href="#">
+    🌐 {{ $.Site.Language.LanguageName }}
+    <ul class="dropdown-menu">
+      {{ range .Site.Languages }}{{ with index $translations .Lang }}
+      <li class="{{ if (eq $.Site.Language .Language) }}active{{ end }}">
+        <a href="{{ .Permalink }}">
+          {{ .Language.LanguageName }}
+        </a>
+      </li>
+      {{ end }}{{ end }}
+    </ul>
+  </a>
+  
+</li> 

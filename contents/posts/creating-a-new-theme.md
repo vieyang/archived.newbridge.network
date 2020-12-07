@@ -22,7 +22,7 @@ In this tutorial, commands that you enter will start with the "$" prompt. The ou
 
 Here's an example:
 
-```
+```bash {linenos=false}
 ## this is a comment
 $ echo this is a command
 this is a command

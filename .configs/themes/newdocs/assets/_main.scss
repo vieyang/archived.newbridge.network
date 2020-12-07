@@ -6,7 +6,7 @@ html {
 
 body {
   min-width: $body-min-width;
-  color: var(--body-font-color);
+  color: var(--body-content);
   background: var(--body-background);
 
   font-weight: $body-font-weight;
@@ -16,9 +16,9 @@ body {
   box-sizing: border-box;
 }
 
-html * {
-  transition: all 0.3s;
-}
+// body * {
+//   transition: all 0.2s;
+// }
 
 h1,
 h2,
@@ -41,6 +41,12 @@ img {
   @include outline;
 }
 
+@mixin ul-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 body {
   .container {
     max-width: $container-max-width;
@@ -57,9 +63,12 @@ body {
 
 main {
   color: var(--body-content);
+  // padding-top: $navbar-item-height + $as-sm + $as-sm;
   .container {
-    background: red;
     padding: $as-md $as-lg;
+    @media (max-width: $mobile-breakpoint) {
+      padding: $as-md $as-md;
+    }
     &.full {
       padding: unset;
       max-width: unset;
@@ -67,64 +76,72 @@ main {
   }
 }
 
-footer {
-  position: relative;
-  background: pink;
-  color: var(--body-content);
-  .container {
-    background: green;
-    padding: $as-md $as-lg;
-    &.full {
-      padding: unset;
-      max-width: unset;
-    }
-  }
-}
-
-
-@mixin ul-reset {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
 
 // Site Navbar
-nav.navbar {
-  position: relative;
+#navbar {
+  // position: fixed;
+  width: 100%;
   background: var(--navbar-bg);
-  box-shadow: 0px 2px 20px 0px rgba(21, 53, 80, 0.1);
+  box-shadow: 0px $as-xxs $as-sm 0px rgba(21, 53, 80, 0.1);
   font-size: $font-size-14;
+  z-index: 100;
 
   .container {
     display: flex;
     padding: $as-sm $as-lg;
+    @media (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+      padding: $as-sm $as-sm;
+    }
   }
 
-  .navbar-collapse {
+  #navbar-collapse {
     width: 100%;
     display: flex;
     // justify-content: flex-end;
     justify-content: space-between;
     font-weight: 600;
+    @media (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: unset;
+    }
   }
 
   #navbar-check {
     display: none;
+    @media (max-width: $mobile-breakpoint) {
+      &:not(:checked) ~ #navbar-collapse {
+        display: none;
+      }
+      &:checked ~ #navbar-collapse {
+        display: flex;
+        overflow-y: auto;
+      }
+    }
   }
 
   .header {
     display: flex;
     height: $navbar-item-height;
-
+    @media (max-width: $mobile-breakpoint) {
+      justify-content: space-between;
+    }
     label.toggle {
       display: none;
       align-items: center;
+      font-size: 3em;
+      color: white;
+      &:hover {
+        color: pink;
+      }
+      @media (max-width: $mobile-breakpoint) {
+        display: flex;
+      }
     }
-    
     img.logo {
       height: $navbar-item-height;
     }
-    
   }
 
   ul.navbar-nav {
@@ -133,12 +150,19 @@ nav.navbar {
     position: relative;
     padding: 0 $as-md;
     z-index: 100;
+    @media (max-width: $mobile-breakpoint){
+      flex-direction: column;
+      padding: 0;
+    }
 
     li.nav-item {
       position: relative;
       margin-right: $as-xs;
       &:last-child {
         margin-right: unset;
+      }
+      @media (max-width: $mobile-breakpoint) {
+        margin: 0 0 8px 0;
       }
     }
 
@@ -147,20 +171,56 @@ nav.navbar {
       line-height: $navbar-item-height;
       padding: 0 $as-md;
       @extend .button-highlight-neutral;
-      @extend .ar-sm;
+      @extend .rounded-sm;
     }
+    li.dropdown {
+      display: inline-block;
+    }
+    ul.dropdown-menu {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background: var(--navbar-bg);
+      min-width: 10rem;
+      @include ul-reset();
+      padding: $as-sm;
+      @media (max-width: $mobile-breakpoint) {
+        position: relative;
+        padding-left: $as-sm;
+      }
+    }
+    li.dropdown:hover .dropdown-menu {
+      display: flex;
+      flex-direction: column;
+    }
+
   }
 
   .search-form {
     position: relative;
-    display: block;
+    display: flex;
+    @media (max-width: $mobile-breakpoint) {
+      padding: 8px 0;
+      margin: 8px 0;
+      border: solid 1px grey;
+      border-left: none;
+      border-right: none;
+      flex-direction: column;
+      order: -1;
+    }
   }
 
   .search-results {
-    position: absolute;
-    display: block;
-    background: rgba(0, 0, 0, .5);
+    position: relative;
+    background: black;
     z-index: 100;
+    max-height: 50vh;
+    overflow: scroll;
+    @media (min-width: $mobile-breakpoint){
+      position: absolute;
+      top: $navbar-item-height;
+    }
+    
   }
 
   #navbar-search-results {
@@ -186,64 +246,137 @@ nav.navbar {
     border-radius: $as-sm;
     color: var(--body-content);
     @extend .highlight-neutral;
+    @media (min-width: $mobile-breakpoint) {
+      width: $aside-width;
+    }
   }
 
 }
 
+main .container {
+  display: flex;
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
+}
 
-@media (max-width: $mobile-breakpoint) {
-  nav.navbar {
-    .container {
-      flex-direction: column;
-      padding: $as-sm $as-sm;
-    }
-    .navbar-collapse {
-      flex-direction: column;
-      justify-content: flex-start;
-      width: unset;
-    }
-    
-    .header {
-      justify-content: space-between;
-      
-      label.toggle {
-        display: flex;
-      }
-    }
-    
-    ul.navbar-nav {
-      flex-direction: column;
-      padding: 0;
-      li.nav-item {
-        margin: 0 0 8px 0;
-      }
-    }
+.page-content {
+  min-width: $body-min-width;
+  flex-grow: 1;
+  padding: 0;
+  // background: var(--primary);
+  @media (min-width: $mobile-breakpoint) { 
+    padding: $padding-16;
+   }
+}
 
-    .search-form {
-      padding: 8px 0;
-      margin: 8px 0;
-      border: solid 1px grey;
-      border-left: none;
-      border-right: none;
-      display: flex;
-      flex-direction: column;
-      .search-results {
-        display: unset;
-      }
+main aside {
+  flex: 0 0 $aside-width;
+  @media (min-width: $mobile-breakpoint) {
+    align-self: flex-start;
+    position: sticky;
+    min-width: $aside-width;
+    top: $as-lg;
+    // top: $navbar-item-height + $as-sm + $as-sm + $as-sm;
+    overflow-y: scroll;
+  }
+  a {
+    // color: inherit;
+    word-wrap: break-word;
+  }
+  h3 {
+    font-weight: 600;
+  }
+}
+
+
+main section {
+  margin-bottom: $as-md;
+  nav {
+    width: $aside-width;
+  }
+}
+
+section.menu {
+  background: unset;
+  border-right: solid 1px grey;
+}
+
+section.toc, section.git-info {
+  display: block;
+  padding: $as-sm;
+  font-size: $font-size-12;
+  @extend .rounded-sm;
+  nav {
+    @media (min-width: $mobile-breakpoint) {
+      max-height: 65vh ;
+      overflow: scroll;
     }
   }
+  background: var(--sidebar-toc-bg);
+}
 
-  #navbar-check:not(:checked) ~ .navbar-collapse {
-    display: none;
+aside nav ul {
+  @include ul-reset();
+
+  li {
+    margin: $as-xxs 0;
+    position: relative;
   }
-  #navbar-check:checked ~ .navbar-collapse {
+
+  a {
+    display: block;
+    padding: $as-xxs;
+    @extend .rounded-xxs;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+
+  ul {
+    padding-inline-start: $padding-16;
+  }
+}
+
+
+footer#site-footer {
+  color: var(--body-content);
+  background: var(--footer-bg);
+  .container {
     display: flex;
-    overflow-y: auto;
-  }
+    flex-direction: row;
+    flex-grow: 1;
+    padding: $as-md $as-lg;
+    flex-wrap: wrap;
+    @media (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+      padding: $as-md $as-md;
+    }
+    &.full {
+      padding: unset;
+      max-width: unset;
+    }
+    .brand {
+      flex-grow: 1;
+      max-width: $aside-width * 1.5;
+      @media (max-width: $mobile-breakpoint) { 
+        max-width: unset;
+      }
 
-  // Mobile Menu Order
-  .search-form {
-    order: -1;
+    }
+    aside {
+      margin: $as-sm 0;
+      @media (min-width: $mobile-breakpoint) {
+        margin: 0 $as-sm;
+      }
+    }
+    ul {
+      @include ul-reset;
+    }
+    row {
+      width: 100%;
+    }
   }
   
 }

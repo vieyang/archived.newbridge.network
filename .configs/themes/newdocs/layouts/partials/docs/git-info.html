@@ -1,0 +1,18 @@
+<div>
+{{ if and .GitInfo .Site.Params.NewDocsRepo }}
+  <p>
+    {{- $date := partial "docs/date" (dict "Date" .GitInfo.AuthorDate.Local "Format" .Site.Params.NewDocsDateFormat) -}}
+    <a class="flex align-center" href="{{ .Site.Params.NewDocsRepo }}/commit/{{ .GitInfo.Hash }}" title='{{ i18n "Last modified by" }} {{ .GitInfo.AuthorName }} | {{ $date }}' target="_blank" rel="noopener">
+      <span>{{ i18n "Last modified by" }} {{ .GitInfo.AuthorName }} <p>{{ $date }}</p> </span>
+    </a>
+  </p>
+{{ end }}
+
+{{ if and .File .Site.Params.NewDocsRepo .Site.Params.NewDocsEditPath }}
+  <p>
+    <a class="flex align-center" href="{{ .Site.Params.NewDocsRepo }}/{{ .Site.Params.NewDocsEditPath }}/{{ .Site.Params.contentDir }}/{{ replace .File.Path "\\" "/" }}" target="_blank" rel="noopener">
+      <span>{{ i18n "Edit this page" }}</span>
+    </a>
+  </p>
+{{ end }}
+</div>
