@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range sort .Paginator.Pages }}
+  {{ range sort .Paginator.Pages.ByDate.Reverse }}
   <article class="markdown newdocs-post">
     <h2>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
