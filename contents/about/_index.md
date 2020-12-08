@@ -2,16 +2,23 @@
 title: About NewBridge
 menu:
   main:
+    parent: More
     name: About
-    weight: 2
 ---
 
-本文档展示了NewBridge的第1阶段规范。
+## Github Links
 
-NewBridge是一种跨链技术。
+### NewBridge App
 
-第一阶段实现了NewChain原生资产跨链到币安链。
+This is the UI for NewBridge App
 
-第二阶段实现了NewChain与Ethereum之间原生资产、主流token、一般ERC20/NEP6资产及NFT资产的跨链互通。
+[newtonproject/newbridge.network](https://github.com/newtonproject/newbridge.network/)
+
+### NewBridge Website
+
+This is the website you are currently viewing
+
+[newtonproject/newbridge.network](https://github.com/newtonproject/newbridge.network/)
+
 
 {{< section-list compact >}}

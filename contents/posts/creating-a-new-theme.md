@@ -2,12 +2,12 @@
 author: "Michael Henderson"
 date: 2014-09-28
 title: Creating a New Theme
-menu:
-  main:
-    parent: Tutorials
 next: /tutorials/github-pages-blog
 prev: /tutorials/automated-deployments
 weight: 10
+categories: 
+  - Updates
+  - Google
 ---
 
 
