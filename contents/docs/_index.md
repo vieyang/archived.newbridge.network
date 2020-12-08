@@ -5,3 +5,5 @@ menu:
     weight: 1
 title: Docs
 ---
+
+{{< section-list >}}
