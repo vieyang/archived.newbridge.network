@@ -155,7 +155,7 @@ main {
       padding: 0;
     }
 
-    li.nav-item {
+    > li.nav-item {
       position: relative;
       margin-right: $as-xs;
       &:last-child {
@@ -168,25 +168,32 @@ main {
 
     li.nav-item a {
       display: flex;
-      line-height: $navbar-item-height;
-      padding: 0 $as-md;
+      // line-height: $navbar-item-height;
+      line-height: 1rem;
+      padding: ($navbar-item-height - 1rem)/2 $as-md;
       @extend .button-highlight-neutral;
       @extend .rounded-sm;
+    }
+    li.nav-item.active > a {
+      text-decoration: underline;
     }
     li.dropdown {
       display: inline-block;
     }
     ul.dropdown-menu {
+      @include ul-reset();
       display: none;
       position: absolute;
       z-index: 1;
       background: var(--navbar-bg);
       min-width: 10rem;
-      @include ul-reset();
       padding: $as-sm;
       @media (max-width: $mobile-breakpoint) {
         position: relative;
         padding-left: $as-sm;
+      }
+      a {
+        display: block;
       }
     }
     li.dropdown:hover .dropdown-menu {
@@ -215,6 +222,7 @@ main {
     background: black;
     z-index: 100;
     max-height: 50vh;
+    width: 100%;
     overflow: scroll;
     @media (min-width: $mobile-breakpoint){
       position: absolute;
@@ -293,7 +301,7 @@ main aside {
 main section {
   margin-bottom: $as-md;
   nav {
-    width: $aside-width;
+    // width: $aside-width;
   }
 }
 
@@ -335,7 +343,7 @@ aside nav ul {
   }
 
   ul {
-    padding-inline-start: $padding-16;
+    padding-inline-start: $as-xs;
   }
 }
 

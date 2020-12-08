@@ -89,7 +89,7 @@ params:
   # Site Nav Bundle
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
-  # NewDocsMenuBundle: /nav
+  NewDocsMenuBundle: /menu/nav
 
   # Site Section
   # (Optional, default docs) Specify root page to render child pages as menu.
@@ -110,7 +110,7 @@ params:
   # Configure the date format used on the pages
   # - In git information
   # - In blog posts
-  NewDocsDateFormat: "January 2, 2006"
+  NewDocsDateFormat: "2006-01-02"
 
   # (Optional, default true) Enables search function with flexsearch,
   # Index is built on fly, therefore it might slowdown your website.

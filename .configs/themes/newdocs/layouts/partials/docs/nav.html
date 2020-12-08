@@ -25,6 +25,7 @@
     <div id="navbar-collapse">
 
       <ul class="navbar-nav">
+        {{ partial "docs/menu-navbar" . }}
         <li class="nav-item dropdown">
           <a href="./#">Home</a>
           <ul class="dropdown-menu">
@@ -39,53 +40,13 @@
         <li class="nav-item">
           <a href="./#">Start</a>
         </li>
-        <li class="nav-item">
-          <a href="./#">Docs</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Start</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Docs</a>
-        </li>
         {{ if .Site.IsMultiLingual }}
           {{ partial "docs/languages" . }}
         {{ end }}
-        <!-- <li class="nav-item">
-          <a href="./#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Start</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Docs</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Start</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Docs</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Start</a>
-        </li>
-        <li class="nav-item">
-          <a href="./#">Docs</a>
-        </li> -->
       </ul>
 
       {{ if default true .Site.Params.NewDocsSearch }}
       <div class="search-form">
-              
               <input
                 type="text"
                 id="navbar-search-input"

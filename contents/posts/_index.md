@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    name: blog
+    name: Posts
     weight: 5
 title: Posts
 ---

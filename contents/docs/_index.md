@@ -1,7 +1,7 @@
 ---
-headless: true
 menu:
   main:
+    name: Docs
     weight: 1
-title: Docs-custom
+title: Docs
 ---
