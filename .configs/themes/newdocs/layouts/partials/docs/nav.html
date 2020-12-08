@@ -6,7 +6,9 @@
     <div class="header brand">
 
       <label for="navbar-check" class="toggle">
-        M
+        <svg class='icon'>
+          <use xlink:href='/icons/bootstrap-icons.svg#filter-left'/>
+        </svg>
       </label>
 
       <a href="{{ .Site.BaseURL | relLangURL }}">
@@ -16,8 +18,10 @@
         <span style="display: none;">{{ .Site.Title }}</span>
       </a>
 
-      <label class="toggle">
-        R
+      <label class="toggle transparent" color="none">
+        <svg class='icon'>
+          <use xlink:href='/icons/bootstrap-icons.svg#emoji-sunglasses'/>
+        </svg>
       </label>
     </div>
 

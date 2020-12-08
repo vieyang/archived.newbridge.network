@@ -242,3 +242,9 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+}
