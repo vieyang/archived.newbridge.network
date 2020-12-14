@@ -15,3 +15,19 @@ Join the developers who are building the next generation of cross-chain services
 ## Browse APIs
 
 {{< section-list >}}
+
+## XChain API
+
+XChain api is backend api for `Main API` and `NewBridgeCore`,
+chainapi is defined in [grpc](https://grpc.io)
+
+The Chain API server is defined as follow:
+
+```grpc
+// The ChainAPI service definition.
+service ChainAPI {
+    rpc CreateAccount (CreateAccountRequest) returns (CreateAccountReply) {}
+}
+```
+
+- [CreateAccount](create-account.md)
