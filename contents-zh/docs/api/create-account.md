@@ -14,10 +14,9 @@ message CreateAccountRequest {
 }
 ```
 
-| **Name**         | **Type** | **Description**   |
-| ---------------- | ------ | -------------------------------------------|
-| name | string   | 另一个链上的用户的收款地址  |       
-
+| **Name** | **Type** | **Description**            |
+| -------- | -------- | -------------------------- |
+| name     | string   | 另一个链上的用户的收款地址 |
 
 ### Response
 
@@ -28,7 +27,7 @@ message CreateAccountReply {
 }
 ```
 
-| **Name**         | **Type** | *Description** |              
-| ---------------- | ------ | ------------------------------------------|
-| name | string   | 另一个链上的用户的收款地址 |   
-| address | string | 当前链上的用户的存款地址 |
+| **Name** | **Type** | \*Description\*\*          |
+| -------- | -------- | -------------------------- |
+| name     | string   | 另一个链上的用户的收款地址 |
+| address  | string   | 当前链上的用户的存款地址   |

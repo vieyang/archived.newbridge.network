@@ -30,4 +30,4 @@ service ChainAPI {
 }
 ```
 
-* [CreateAccount](create-account.md)
+- [CreateAccount](create-account.md)

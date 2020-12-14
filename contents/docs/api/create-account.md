@@ -20,10 +20,9 @@ message CreateAccountRequest {
 }
 ```
 
-| **Name**         | **Type** | **Description**   |
-| ---------------- | ------ | -------------------------------------------|
-| name | string   | the nick name for the acccount to be created, in newbridge, this is the user's recipient address of another chain  |       
-
+| **Name** | **Type** | **Description**                                                                                                   |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| name     | string   | the nick name for the acccount to be created, in newbridge, this is the user's recipient address of another chain |
 
 ### Response
 
@@ -34,7 +33,7 @@ message CreateAccountReply {
 }
 ```
 
-| **Name**         | **Type** | *Description** |              
-| ---------------- | ------ | ------------------------------------------|
-| name | string   | the nick name for the acccount to be created, in newbridge, this is the user's recipient address of another chain   
-| address | string | the address of current chain |
+| **Name** | **Type** | \*Description\*\*                                                                                                 |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| name     | string   | the nick name for the acccount to be created, in newbridge, this is the user's recipient address of another chain |
+| address  | string   | the address of current chain                                                                                      |

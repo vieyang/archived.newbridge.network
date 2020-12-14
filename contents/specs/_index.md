@@ -64,4 +64,3 @@ NewBridge Core is used to coordinate the user deposit, handling fee, payout;
 - Out
   - User receipt address
   - Amount
-
