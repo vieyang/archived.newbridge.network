@@ -1,0 +1,21 @@
+{{ if or (.Get "compact") (in .Params "compact") }}
+<dl>
+  {{ range .Page.Pages }}
+    <dt>
+      <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+    </dt>
+  {{ end }}
+  </dl>
+{{ else }}
+<dl>
+  {{ range .Page.Pages }}
+    <dt>
+      <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+    </dt>
+    <dd>
+      {{ default .Summary .Description }}
+    </dd>
+  {{ end }}
+  </dl>
+  
+{{ end }}

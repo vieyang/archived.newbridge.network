@@ -1,6 +1,8 @@
 # NewBridge Network Website
 
-## Init
+This repo is for NewBridge website.
+
+## Init (Legacy)
 
 This repo is currently an init for the offical repo.
 
@@ -10,7 +12,7 @@ All commits will be moved to the offical repo before the project is offically on
 
 I (@arisac) will update the website program and scripts onces it's ready for test, markdown formats maybe changed in the offical version.
 
-## Stages
+## Stages (Legacy)
 
 ### S1 & S2: Prepare to be moved to offical repo
 
@@ -26,23 +28,29 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 **Features Todo List**
 
-- Generate Menu 
+- Generate Menu
 
 - Contents Generate
 
-  - markdown parser
+  - ✅ markdown parser
 
-  - code highlight parser
+  - ✅ code highlight parser
 
-  - ToC parser
+  - ✅ ToC parser
 
-  - html contents parser
+  - ✅ html contents parser
 
   - contents templates: docs & posts
 
 - Theme
 
- - too many under working, not listed
+- too many under working, not listed
+
+- Guides
+
+  - Contents Contribution `tbd`
+
+  - Program Contribution `tbd`
 
 ### S3. Launch main website
 
@@ -52,21 +60,23 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 - Update theme and home
 
-- Run 
+- Run
 
 **Automations**
 
 - PR
 
+  - CLA Signature Check `tbd`
+
   - Contents Check
 
     - markdown formats `tbd`
 
-    - invalid links `tbd`
+    - ✅ invalid internal links
 
-    - i18n completeness check `tbd`
+    - i18n completeness check `postpone`
 
-- Run Test 
+- Run Test
 
   - Rerun Contents Check `tbd`
 
@@ -74,11 +84,17 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 - Deploy
 
-  - Deploy `tbd`
+  - ✅ Deploy
 
 ### S4: Future
 
 Run as it should be
+
+## License
+
+The content of this project itself is licensed under the [Creative Commons Attribution 3.0 Unported license](https://creativecommons.org/licenses/by/3.0/), and the underlying source code used to format and display that content is licensed under the [Apache-2.0 License](LICENSE).
+
+The contents of this project are placed in `contents` and `contents-*` directories.
 
 ## Other
 
