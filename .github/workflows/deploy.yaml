@@ -1,9 +1,9 @@
-name: github pages
+name: Deploy Github Pages
 
 on:
   push:
     branches:
-      - wip-hugo  # Set a branch to deploy
+      - main  # Set a branch to deploy
 
 jobs:
   deploy:
