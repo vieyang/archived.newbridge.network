@@ -1,5 +1,12 @@
+---
+title: Account History API
+description: "Returns a JSON structure with details of the NewBridge transfer history of the specified accounts."
+author: "Vie Yang"
+---
 
-# `GET` Account History
+# Account History API
+
+## `GET` Account History
 
 **`GET` /v1/newbridge/history**
 

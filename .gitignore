@@ -2,6 +2,9 @@
 /.configs/public
 /.configs/resources
 
+# NPM
+node_modules
+
 ## OS Files
 # Windows
 Thumbs.db

@@ -1,0 +1,7 @@
+{{ if default true .Site.Params.NewDocsSearch }}
+<div class="newdocs-search">
+  <input type="text" id="newdocs-search-input" placeholder="{{ i18n "Search" }}" aria-label="{{ i18n "Search" }}" maxlength="64" data-hotkeys="s/" />
+  <div class="newdocs-search-spinner hidden"></div>
+  <ul id="newdocs-search-results"></ul>
+</div>
+{{ end }}

@@ -1,0 +1,20 @@
+- id: LanguageShortName
+  translation: EN
+  
+- id: Search
+  translation: Search
+
+- id: Edit this page
+  translation: Edit this page
+
+- id: Last modified by
+  translation: Last modified by
+
+- id: Last modified on
+  translation: Last modified on
+
+- id: Expand
+  translation: Expand
+
+- id: newdocsSearchConfig
+  translation: '{ cache: true }'
