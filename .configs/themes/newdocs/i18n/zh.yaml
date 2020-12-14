@@ -22,6 +22,12 @@
 - id: Back to
   translation: 返回
 
+- id: footer-info-text
+  translation: NewBridge 由 Newton Project 提供。
+
+- id: footer-cpr
+  translation: © 2020 牛顿项目及其他贡献者
+
 - id: newdocsSearchConfig
   translation: |
     {

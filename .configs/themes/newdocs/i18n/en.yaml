@@ -22,5 +22,11 @@
 - id: Back to
   translation: Back to
 
+- id: footer-info-text
+  translation: NewBridge Network is presented by Newton Project.
+
+- id: footer-cpr
+  translation: © 2020 Newton Project & Other Contributors
+
 - id: newdocsSearchConfig
   translation: '{ cache: true }'
