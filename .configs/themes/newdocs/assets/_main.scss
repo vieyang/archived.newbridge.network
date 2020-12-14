@@ -416,7 +416,7 @@ footer#site-footer {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    padding: $as-md $as-lg;
+    padding: $as-lg $as-lg;
     flex-wrap: wrap;
     @media (max-width: $mobile-breakpoint) {
       flex-direction: column;
