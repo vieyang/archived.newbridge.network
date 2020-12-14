@@ -28,7 +28,7 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 **Features Todo List**
 
-- Generate Menu 
+- Generate Menu
 
 - Contents Generate
 
@@ -44,7 +44,7 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 - Theme
 
- - too many under working, not listed
+- too many under working, not listed
 
 - Guides
 
@@ -60,7 +60,7 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
 - Update theme and home
 
-- Run 
+- Run
 
 **Automations**
 
@@ -76,7 +76,7 @@ I (@arisac) will update the website program and scripts onces it's ready for tes
 
     - i18n completeness check `postpone`
 
-- Run Test 
+- Run Test
 
   - Rerun Contents Check `tbd`
 

@@ -54,6 +54,9 @@ menu:
   #     url: "https://newtonproject.org"
   #     weight: 20
 
+ignoreFiles:
+  - ../contents*/menu
+
 ##########
 # Google Analytics
 # ------
@@ -129,4 +132,4 @@ params:
   # ------
   # Don't know why feature failed in Safari of current version, should fix later  
   # ------
-  NewDocsServiceWorker: true
+  NewDocsServiceWorker: false

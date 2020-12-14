@@ -20,5 +20,4 @@ This is the website you are currently viewing.
 
 [newtonproject/newbridge.network](https://github.com/newtonproject/newbridge.network/)
 
-
 {{< section-list compact >}}

@@ -1,3 +1,0 @@
----
-NewDocsFlatSection: true
----

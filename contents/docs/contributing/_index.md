@@ -14,7 +14,7 @@ We’re still working out the kinks to make contributing to this project as easy
 
 ## Branch Organization for Website
 
-Submit all changes directly to the `main branch`. We don’t use separate branches for development or for upcoming releases. We do our best to keep `main` in good shape, with all tests passing. Any accepted changes in `main` will be automatically tested and deployed once the tests are passed. 
+Submit all changes directly to the `main branch`. We don’t use separate branches for development or for upcoming releases. We do our best to keep `main` in good shape, with all tests passing. Any accepted changes in `main` will be automatically tested and deployed once the tests are passed.
 
 Code that lands in `main` must be compatible with the latest stable release. It may contain additional features, but no breaking changes. We should be able to release a new minor version from the tip of `main` at any time.
 
@@ -34,15 +34,27 @@ We are accepting documentation contributions to contents. As well as translation
 
 ## Contributor License Agreement (CLA)
 
-In order to accept your pull request, we need you to submit a CLA. 
+In order to accept your pull request, we need you to submit a CLA.
 
 Once you open a pull request, the CLA Bot will check if you have previously signed a CLA to the repo you are contributing to. If not, please follow the CLA Bot's message to finish signing CLA. For each repo, you have only sign the CLA once.
 
 ## Style Guide
 
-We use an automatic code formatter called Prettier. 
+We use an automatic code formatter called Prettier.
 
-And it is currently under configuration. Once complete, the guides will be shown here.
+Currently we have a markdown check for the `contents` dirs.
+
+Use following command to check your format for the contents:
+
+```bash
+yarn check-contents
+```
+
+To auto fix errors or formating, use the command below, this should make your contents looks much better.
+
+```bash
+yarn format-contents
+```
 
 ## License
 

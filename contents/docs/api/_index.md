@@ -1,10 +1,10 @@
 ---
-title: NewBridge API
+title: API Docs
 description: Newton Project has provided a public API for user or 3rd-party Apps to use and lookup data in NewBridge.
 weight: 5
 ---
 
-# NewBridge API {{< icon color="red" icon="exclamation-diamond">}}
+# NewBridge API Docs
 
 Welcome to NewBridge API documents for Developers.
 

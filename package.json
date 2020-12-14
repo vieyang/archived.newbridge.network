@@ -4,21 +4,24 @@
   "description": "## Init",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd .configs && npx hugo server"
+    "test": "echo \"no test specified\" && exit 1",
+    "dev": "cd .configs && npx hugo server",
+    "check-contents": "npx prettier --check ./contents*",
+    "format-contents": "npx prettier --write ./contents*"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arisac/newbridge.network.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/arisac/newbridge.network/issues"
   },
   "homepage": "https://github.com/arisac/newbridge.network#readme",
   "devDependencies": {
     "hugo-bin": "^0.67.0",
-    "hugo-bin-extended": "^0.79.0"
+    "hugo-bin-extended": "^0.79.0",
+    "prettier": "2.2.1"
   }
 }

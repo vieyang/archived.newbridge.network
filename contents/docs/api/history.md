@@ -16,10 +16,10 @@ Returns a JSON structure with details of the NewBridge transfer history of the s
 
 ### Required
 
-| **Name**         | **In** | **Type** | **Description**                                              | **Enum** | **Default** |
-| ---------------- | ------ | -------- | ------------------------------------------------------------ | -------- | ----------- |
+| **Name**         | **In** | **Type** | **Description**                                                                                                                                                                  | **Enum** | **Default** |
+| ---------------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
 | newchain_address | query  | string   | At least one parameter should be provided in `newchain_address` and `ethereum_address`. NewChain address can be starting with `NEW` or using raw hex address starting with `0x`. |          |             |
-| ethereum_address | query  | string   | At least one parameter should be provided in `newchain_address` and `ethereum_address`. Ethereum address should be starting with `0x`. |          |             |
+| ethereum_address | query  | string   | At least one parameter should be provided in `newchain_address` and `ethereum_address`. Ethereum address should be starting with `0x`.                                           |          |             |
 
 ### Optional
 
@@ -73,23 +73,23 @@ curl -v https://replace-api-domain.ext/newbridge/history?newchain_address=0x9754
 }
 ```
 
-| **Name**                 | **Type**          | **Description**                                                         |
-| -------------------- | ------------- | ------------------------------------------------------------ |
-| newchain_address     | String        | NewChain Address starting with `NEW`.  Only one of  `newchain_address` or `ethereum_address` will be returned. |
-| ethereum_address     | String        | Ethereum Address starting with `0x`. Only one of  `newchain_address` or `ethereum_address` will be returned. |
-| newchain_raw_address | String        | NewChain Address in raw hex format starting with `NEW`. |
-| page_id              | int           | Page number.                     |
-| page_size            | int           | Number of results per page.                      |
-| total_page           | int           | Number of total page.            |
-| total_history        | int           | Number of total results.       |
-| list                 | BridgeHistory | Array type of `BridgeHistory`. |    
+| **Name**             | **Type**      | **Description**                                                                                              |
+| -------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| newchain_address     | String        | NewChain Address starting with `NEW`. Only one of `newchain_address` or `ethereum_address` will be returned. |
+| ethereum_address     | String        | Ethereum Address starting with `0x`. Only one of `newchain_address` or `ethereum_address` will be returned.  |
+| newchain_raw_address | String        | NewChain Address in raw hex format starting with `NEW`.                                                      |
+| page_id              | int           | Page number.                                                                                                 |
+| page_size            | int           | Number of results per page.                                                                                  |
+| total_page           | int           | Number of total page.                                                                                        |
+| total_history        | int           | Number of total results.                                                                                     |
+| list                 | BridgeHistory | Array type of `BridgeHistory`.                                                                               |
 
 ### Error Codes
 
-| **Status** | **Code**                     | **Description**                              | **Params**                                                   |
-| ---------- | ---------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
-| **400**    | account_not_found            | Acount was not found                         |                                                              |
-| **400**    | address_is_in_invalid_format | Requested address format is not valid        | { "type" => "newchain_address" } or  { "type" => "ethereum_address" } |
-| **429**    | too_many_requests            | Too many requests have been made to the api. |                                                              |
-| **500**    | internal_server_error        | Internal server error                        |                                                              |
-| **503**    | service_unavailable          | Service is temporary unavailable             |                                                              |
+| **Status** | **Code**                     | **Description**                              | **Params**                                                           |
+| ---------- | ---------------------------- | -------------------------------------------- | -------------------------------------------------------------------- |
+| **400**    | account_not_found            | Acount was not found                         |                                                                      |
+| **400**    | address_is_in_invalid_format | Requested address format is not valid        | { "type" => "newchain_address" } or { "type" => "ethereum_address" } |
+| **429**    | too_many_requests            | Too many requests have been made to the api. |                                                                      |
+| **500**    | internal_server_error        | Internal server error                        |                                                                      |
+| **503**    | service_unavailable          | Service is temporary unavailable             |                                                                      |

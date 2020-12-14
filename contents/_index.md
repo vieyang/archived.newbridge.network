@@ -7,9 +7,10 @@ Use NewBridge App
 
 need update
 
-{{< columns >}} 
+{{< columns >}}
 
 ### <center>NewBridge App</center>
+
 <center>
   Get behind NewBridge and View
 </center>
@@ -20,8 +21,10 @@ need update
 
 {{< /columns >}}
 
-{{< columns >}} 
+{{< columns >}}
+
 ### <center>View Docs</center>
+
 <center>
   Get behind NewBridge and ViewGet behind NewBridge and ViewGet behind NewBridge and ViewGet behind NewBridge and ViewGet behind NewBridge and View
 </center>
@@ -30,9 +33,10 @@ need update
   {{< button relref="./" >}}Get Home{{< /button >}}
 </center>
 
-<---> 
+<--->
 
 ### <center>FAQs</center>
+
 <center>
   Get behind NewBridge and View
 </center>

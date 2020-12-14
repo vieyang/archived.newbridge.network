@@ -1,12 +1,16 @@
 ---
 NewDocsFlatSection: true
-title: Shortcodes Documentation
+title: Shortcodes
 description: Shortcodes for making the contents better.
 weight: 15
 ---
 
-Markdown is great for documents. However it is very limited for website layout and functions. 
+# About Shortcodes
 
-So there are shortcodes to make more flexible contents on this website.
+NewBridge website is using markdown format for documentations. Of course markdown is great for documents, but it is also very limited for website layout and functions.
+
+NewBridge website supports so called Shortcodes. They have been introduced for creating macros to be used in a website's content.
+
+## List of Shortcodes
 
 {{< section-list compact >}}

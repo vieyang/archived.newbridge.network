@@ -16,5 +16,11 @@
 - id: Expand
   translation: Expand
 
+- id: Page Not Found
+  translation: Page Not Found
+
+- id: Back to
+  translation: Back to
+
 - id: newdocsSearchConfig
   translation: '{ cache: true }'

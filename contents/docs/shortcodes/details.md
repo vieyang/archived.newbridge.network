@@ -1,37 +1,37 @@
 # Details
 
-Details shortcode is a helper for `details` html5 element. 
+Details shortcode is a helper for [HTML Details Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details).
 
-## Example
+- `title` is used for the contents of `summary` tag in details element.
+
+- `open` is used for the attribution of the details element. Specify the initial status of the details element.
+
+## Code Example
+
 ```tpl
 {{</* details "Title" [open] */>}}
 ## Markdown content
 Lorem markdownum insigne...
 {{</* /details */>}}
-```
 
-```tpl
 {{</* details title="Title" open=true */>}}
 ## Markdown content
 Lorem markdownum insigne...
 {{</* /details */>}}
 ```
 
-{{< details title="Title" >}}
-## Markdown content
+### Previews
+
+{{< details title="This will be closed by default" >}}
+
+#### Markdown content
+
 Lorem markdownum insigne...
 {{< /details >}}
 
-1st
+{{< details "This is Opened by default" open >}}
 
-{{< details "Title" open >}}
-## Markdown content
-Lorem markdownum insigne...
-{{< /details >}}
+#### Markdown content
 
-next 
-
-{{< details "Title"  >}}
-## Markdown content
 Lorem markdownum insigne...
 {{< /details >}}

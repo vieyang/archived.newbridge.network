@@ -16,6 +16,12 @@
 - id: Expand
   translation: 展开
 
+- id: Page Not Found
+  translation: 页面未找到
+
+- id: Back to
+  translation: 返回
+
 - id: newdocsSearchConfig
   translation: |
     {

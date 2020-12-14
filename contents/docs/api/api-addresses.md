@@ -6,7 +6,7 @@ weight: 1
 
 # API Addresses
 
-We provided public API addresses for NewBridge. 
+We provided public API addresses for NewBridge.
 
 ## NewChain MainNet
 
