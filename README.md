@@ -1,6 +1,6 @@
 # NewBridge Network Website
 
-Languages: [English - this doc](README.md) [中文](README-zh.md)
+Languages: [English - this doc](README.md) | [中文](README-zh.md)
 
 This repo is for NewBridge website.
 
