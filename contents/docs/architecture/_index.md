@@ -1,27 +1,34 @@
 ---
-menu:
-  main:
-    name: Architecture
-    weight: 5
 title: Architecture
+description: Describes the NewBrige Architecture
+weight: 3
 ---
 
-## Architecture
+# NewBridge Architecture
 
-- [API](../api/_index.md)
-  - main api
-  - XChain api
-- monitor (deposit)
-- secure vault
-  - collection
-  - payout
-- core (validator)
+NewBridge has multiple Components, here is a simplified list:
+
+- NewBridge Core
+  - Validator
+- Secure Vault
+  - Collection
+  - Payout
+- Monitor (Deposit)
+- APIs
+  - NewBridge Service API
+  - XChain API
+
+And a graph to the Architecture:
+
+![NewBridge Architecture](newbridge-architecture.jpg)
 
 ## Monitor
 
 Each chain has its own `monitor` program, which will detect the payment status of the address in the system based on token information.
 
 ## Secure Vault
+
+Secure Vault is a component to keep the assets safe and secure in each blockchain. And it is also functions as a service to collect the deposit from each blockchain, as well as payout the assets to another account in the blockchain validated by the NewBridge Core Validator component.
 
 ### Collection
 
@@ -45,15 +52,7 @@ Each chain has its own `payout` program
 - transfer
   for token, call transfer function by MainAddress
 
-### fees
-
-- GasPrice
-  call `eth_gasPrice` to get gas price
-- GasLimit
-  - Force use 90000 for general transfer
-  - Force use 100000 for token transfer
-
-## core (validator)
+## NewBridge Core (Validator)
 
 NewBridge Core is used to coordinate the user deposit, handling fee, payout;
 
