@@ -8,7 +8,7 @@ title: Architecture
 
 ## Architecture
 
-- [API](api/README.md)
+- [API](../api/_index.md)
   - main api
   - XChain api
 - monitor (deposit)
